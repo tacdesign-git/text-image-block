@@ -17,7 +17,7 @@
 <?php
 
 
-function modify_acf_layouts($acf_field_group) {
+function modify_acf_layouts($acf_field_groups) {
     $new_layout = [
          // Flexi Image & Text
         "layout_tac_flexi_block__imagetext" => [
@@ -872,14 +872,14 @@ function modify_acf_layouts($acf_field_group) {
     ];
 
     // Ensure the "layouts" key exists and is an array
-    if (!isset($acf_field_group['fields'][0]['layouts']) || !is_array($acf_field_group['fields'][0]['layouts'])) {
-        $acf_field_group['fields'][0]['layouts'] = [];
+    if (!isset($acf_field_groups['fields'][0]['layouts']) || !is_array($acf_field_groups['fields'][0]['layouts'])) {
+        $acf_field_groups['fields'][0]['layouts'] = [];
     }
 
     // Merge the new layout into the existing layouts
-    $acf_field_group['fields'][0]['layouts'] = array_merge($acf_field_group['fields'][0]['layouts'], $new_layout);
+    $acf_field_groups['fields'][0]['layouts'] = array_merge($acf_field_groups['fields'][0]['layouts'], $new_layout);
 
-    return $acf_field_group;
+    return $acf_field_groups;
 }
 add_filter('modify_acf_field_groups', 'modify_acf_layouts', 10, 1);
 

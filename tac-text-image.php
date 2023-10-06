@@ -16,7 +16,7 @@
  * Plugin Name:       TAC - Text / Image
  * Plugin URI:        https://tac.studio
  * Description:       TAC Design - Text & Image block
- * Version:           1.0.5
+ * Version:           1.0.6
  * Author:            TAC Design
  * Author URI:        https://tac.studio/
  * License:           GPL-2.0+
