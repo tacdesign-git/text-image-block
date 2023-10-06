@@ -11,6 +11,7 @@
  * @package    Tac_Text_Image
  * @subpackage Tac_Text_Image/public/partials
  */
+error_log('Plugin initiated PUBLIC:');
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
