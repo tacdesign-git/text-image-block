@@ -17,7 +17,7 @@
 <?php
 
 
-function modify_acf_layouts($acf_field_groups) {
+function modify_acf_layouts($acf_field_group) {
     error_log('Plugin received: ' . print_r($acf_field_group, true));
     $new_layout = [
          // Flexi Image & Text
@@ -873,14 +873,14 @@ function modify_acf_layouts($acf_field_groups) {
     ];
 
     // Ensure the "layouts" key exists and is an array
-    if (!isset($acf_field_groups['fields'][0]['layouts']) || !is_array($acf_field_groups['fields'][0]['layouts'])) {
-        $acf_field_groups['fields'][0]['layouts'] = [];
+    if (!isset($acf_field_group['fields'][0]['layouts']) || !is_array($acf_field_group['fields'][0]['layouts'])) {
+        $acf_field_group['fields'][0]['layouts'] = [];
     }
 
     // Merge the new layout into the existing layouts
-    $acf_field_groups['fields'][0]['layouts'] = array_merge($acf_field_groups['fields'][0]['layouts'], $new_layout);
+    $acf_field_group['fields'][0]['layouts'] = array_merge($acf_field_group['fields'][0]['layouts'], $new_layout);
     error_log('Plugin sending: ' . print_r($acf_field_group, true));
-    return $acf_field_groups;
+    return $acf_field_group;
 }
 add_filter('modify_acf_field_groups', 'modify_acf_layouts', 20, 1);
 
