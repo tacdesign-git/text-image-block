@@ -100,4 +100,7 @@ class Tac_Text_Image_Admin {
 
 	}
 
+
+	error_log('Plugin initiated ADMIN:');
+
 }
