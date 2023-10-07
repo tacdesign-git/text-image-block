@@ -5,8 +5,13 @@ class Tac_Text_Image_ACF {
     // public function __construct() {
     //     add_filter('modify_acf_field_groups', array($this, 'modify_acf_layouts'), 20, 1);
     // }
+    error_log('Function modify_acf_layouts is defined.');
 
     public function modify_acf_layouts($acf_field_group) {
+
+        error_log('Fired.');
+
+
         $new_layout = [
              // Flexi Image & Text
              "layout_tac_flexi_block__imagetext" => [
