@@ -122,6 +122,11 @@ class Tac_Text_Image {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-tac-text-image-public.php';
 
+		/**
+		 * The class responsible for injecting the ACF fields
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-tac-text-image-acf.php';
+
 		$this->loader = new Tac_Text_Image_Loader();
 
 	}
