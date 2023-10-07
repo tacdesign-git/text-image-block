@@ -112,6 +112,11 @@ class Tac_Text_Image {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-tac-text-image-i18n.php';
 
 		/**
+		 * The class responsible for injecting the ACF fields
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-tac-text-image-acf.php';
+
+		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-tac-text-image-admin.php';
@@ -122,10 +127,6 @@ class Tac_Text_Image {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-tac-text-image-public.php';
 
-		/**
-		 * The class responsible for injecting the ACF fields
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-tac-text-image-acf.php';
 
 		$this->loader = new Tac_Text_Image_Loader();
 
@@ -179,6 +180,23 @@ class Tac_Text_Image {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
 	}
+
+
+	/**
+	 * Register ACF.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 */
+	private function define_acf_hooks() {
+
+		// Instantiate the ACF class
+		$this->$plugin_acf = new Tac_Text_Image_ACF();
+		$this->loader->add_action( 'plugins_loaded', $plugin_acf, 'modify_acf_layouts' );
+
+	}
+
+
 
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
