@@ -188,14 +188,6 @@ class Tac_Text_Image {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function define_acf_hooks() {
-
-		$this->$plugin_acf = new Tac_Text_Image_ACF();
-
-		$this->loader->add_action( 'plugins_loaded', $plugin_acf, 'modify_acf_layouts' );
-
-	}
-
 
 	private function define_acf_hooks() {
 		// Instantiate the ACF class
