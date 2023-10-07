@@ -1,30 +1,5 @@
 <?php
 
-/**
- * Define the internationalization functionality
- *
- * Loads and defines the internationalization files for this plugin
- * so that it is ready for translation.
- *
- * @link       https://tac.studio
- * @since      1.0.0
- *
- * @package    Tac_Text_Image
- * @subpackage Tac_Text_Image/includes
- */
-
-/**
- * Define the internationalization functionality.
- *
- * Loads and defines the internationalization files for this plugin
- * so that it is ready for translation.
- *
- * @since      1.0.0
- * @package    Tac_Text_Image
- * @subpackage Tac_Text_Image/includes
- * @author     TAC Design <dev@tac-design.co.uk>
- */
-
 class Tac_Text_Image_ACF {
 
     public function __construct() {
