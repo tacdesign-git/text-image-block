@@ -190,11 +190,21 @@ class Tac_Text_Image {
 	 */
 	private function define_acf_hooks() {
 
-		// Instantiate the ACF class
 		$this->$plugin_acf = new Tac_Text_Image_ACF();
+
 		$this->loader->add_action( 'plugins_loaded', $plugin_acf, 'modify_acf_layouts' );
 
 	}
+
+
+	private function define_acf_hooks() {
+		// Instantiate the ACF class
+		$this->plugin_acf = new Tac_Text_Image_ACF();
+
+		// Add the filter using the loader
+		$this->loader->add_filter('modify_acf_field_groups', array($this->plugin_acf, 'modify_acf_layouts'), 20, 1);
+	}
+	
 
 
 
