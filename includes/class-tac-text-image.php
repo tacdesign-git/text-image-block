@@ -189,7 +189,7 @@ class Tac_Text_Image {
 	 */
 	public function run() {
 		$this->loader->run();
-		//$this->acf = new Tac_Text_Image_ACF();
+		$this->acf = new Tac_Text_Image_ACF();
 	}
 
 	/**
