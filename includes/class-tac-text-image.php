@@ -78,7 +78,6 @@ class Tac_Text_Image {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-		//$this->define_acf_hooks();
 
 	}
 
@@ -184,31 +183,13 @@ class Tac_Text_Image {
 
 
 	/**
-	 * Register ACF.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-
-	// private function define_acf_hooks() {
-	// 	// Instantiate the ACF class
-	// 	$this->plugin_acf = new Tac_Text_Image_ACF();
-
-	// 	// Add the filter using the loader
-	// 	$this->loader->add_filter('modify_acf_field_groups', array($this->plugin_acf, 'modify_acf_layouts'), 20, 1);
-	// }
-	
-
-
-
-	/**
 	 * Run the loader to execute all of the hooks with WordPress.
 	 *
 	 * @since    1.0.0
 	 */
 	public function run() {
 		$this->loader->run();
-		$this->acf = new Tac_Text_Image_ACF();
+		//$this->acf = new Tac_Text_Image_ACF();
 	}
 
 	/**
