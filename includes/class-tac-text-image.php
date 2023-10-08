@@ -190,13 +190,13 @@ class Tac_Text_Image {
 	 * @access   private
 	 */
 
-	private function define_acf_hooks() {
-		// Instantiate the ACF class
-		$this->plugin_acf = new Tac_Text_Image_ACF();
+	// private function define_acf_hooks() {
+	// 	// Instantiate the ACF class
+	// 	$this->plugin_acf = new Tac_Text_Image_ACF();
 
-		// Add the filter using the loader
-		$this->loader->add_filter('modify_acf_field_groups', array($this->plugin_acf, 'modify_acf_layouts'), 20, 1);
-	}
+	// 	// Add the filter using the loader
+	// 	$this->loader->add_filter('modify_acf_field_groups', array($this->plugin_acf, 'modify_acf_layouts'), 20, 1);
+	// }
 	
 
 
@@ -208,6 +208,7 @@ class Tac_Text_Image {
 	 */
 	public function run() {
 		$this->loader->run();
+		$this->acf = new Tac_Text_Image_ACF();
 	}
 
 	/**
