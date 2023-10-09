@@ -53,7 +53,8 @@ class Tac_Text_Image_Public {
 		$this->version = $version;
 
 		// include the public partial file
-		add_filter('the_content', 'inject_custom_content_block');
+		add_filter('the_content', array($this, 'inject_custom_content_block'), 20);
+
 
 	}
 
@@ -109,10 +110,14 @@ class Tac_Text_Image_Public {
 	function inject_custom_content_block($content) {
 		global $post;
 
+
+		
 		// Check if the current post has the specific ACF layout/block you're targeting
 		if (have_rows('content_blocks', $post->ID)): 
 
 			while (have_rows('content_blocks', $post->ID)): the_row();
+
+			echo get_row_layout();
 
 				if (get_row_layout() == 'flexiimagetext'):
 					ob_start();
