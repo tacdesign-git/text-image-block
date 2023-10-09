@@ -114,7 +114,7 @@ class Tac_Text_Image_Public {
 
 			while (have_rows('content_blocks', $post->ID)): the_row();
 
-				if (get_row_layout() == 'layout_tac_flexi_block__imagetext'):
+				if (get_row_layout() == 'flexiimagetext'):
 					ob_start();
 					include plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/tac-text-image-public-display.php';
 					$block_content = ob_get_clean();
