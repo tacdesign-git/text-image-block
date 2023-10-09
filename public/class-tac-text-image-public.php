@@ -97,7 +97,7 @@ class Tac_Text_Image_Public {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/tac-text-image-public.js', array( 'jquery' ), $this->version, false );
-
+		add_filter('the_content', array($this, 'inject_custom_content_block'), 20);
 	}
 
 
