@@ -14,7 +14,7 @@
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
-
+<?php console_log('hey...'); ?>
 <section>
 
     <h2>Hey I'm here...</h2>
