@@ -51,7 +51,7 @@ class Tac_Text_Image_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-		$this->add_filter('the_content', 'inject_custom_content_block', 20);
+		
 	}
 
 	/**
