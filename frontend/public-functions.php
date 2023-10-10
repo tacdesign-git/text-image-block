@@ -31,6 +31,6 @@ function inject_custom_content_block($content) {
 }
 
 
-add_filter('the_content', 'inject_custom_content_block');
+add_filter('the_content', 'inject_custom_content_block', 25, 1);
 
 
