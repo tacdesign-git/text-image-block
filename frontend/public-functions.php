@@ -1,6 +1,6 @@
 <?php
 
-
+echo 'Im stuck';
 
 function inject_custom_content_block($content) {
     global $post;
