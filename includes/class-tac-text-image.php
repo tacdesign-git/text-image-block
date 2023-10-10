@@ -191,7 +191,7 @@ class Tac_Text_Image {
 	public function run() {
 		$this->loader->run();
 		$this->acf = new Tac_Text_Image_ACF();
-		$this->public = add_action('the_content', 'inject_custom_content_block', 20);
+		add_filter('the_content', array($this, 'inject_custom_content_block'), 20);
 	}
 
 
@@ -225,7 +225,7 @@ class Tac_Text_Image {
 
 
 
-	
+
 	/**
 	 * The name of the plugin used to uniquely identify it within the context of
 	 * WordPress and to define internationalization functionality.
