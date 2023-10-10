@@ -34,10 +34,3 @@ function inject_custom_content_block($content) {
 add_filter('the_content', 'inject_custom_content_block');
 
 
-?>
-
-
-
-<section>
-    hello.....
-</section>
