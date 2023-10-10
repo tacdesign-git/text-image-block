@@ -3,7 +3,7 @@
 class Tac_Text_Image_PUBLIC {
 
     public function __construct() {
-        add_filter('the_content', array($this, 'inject_custom_content_block'), 20, 1);
+        add_filter('the_content', array($this, 'inject_custom_content_block'), 20);
     }
 
 	public function inject_custom_content_block($content) {
