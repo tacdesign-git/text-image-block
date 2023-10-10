@@ -179,7 +179,7 @@ class Tac_Text_Image {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 		//$this->loader->add_action('the_content', $plugin_public, 'inject_custom_content_block');
-		add_filter('the_content', array($this, 'inject_custom_content_block'));
+		
 	}
 
 	/**
