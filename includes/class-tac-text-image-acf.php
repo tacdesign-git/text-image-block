@@ -870,6 +870,7 @@ class Tac_Text_Image_ACF {
         // Merge the new layout into the existing layouts
         $acf_field_group['fields'][0]['layouts'] = array_merge($acf_field_group['fields'][0]['layouts'], $new_layout);
         return $acf_field_group;
+        
     }
 
 }
