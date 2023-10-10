@@ -191,7 +191,7 @@ class Tac_Text_Image {
 	public function run() {
 		$this->loader->run();
 		$this->acf = new Tac_Text_Image_ACF();
-		$this->public->add_action('the_content', 'inject_custom_content_block', 20);
+		$this->public = add_action('the_content', 'inject_custom_content_block', 20);
 	}
 
 	/**
