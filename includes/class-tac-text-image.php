@@ -119,13 +119,13 @@ class Tac_Text_Image {
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-tac-text-image-admin.php';
+		//require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-tac-text-image-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-tac-text-image-public.php';
+		//require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-tac-text-image-public.php';
 
 
 		/**
@@ -178,16 +178,16 @@ class Tac_Text_Image {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function define_public_hooks() {
+	// private function define_public_hooks() {
 
-		$plugin_public = new Tac_Text_Image_Public( $this->get_plugin_name(), $this->get_version());
+	// 	$plugin_public = new Tac_Text_Image_Public( $this->get_plugin_name(), $this->get_version());
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-		//$this->loader->add_action('the_content', $plugin_public, 'inject_custom_content_block');
-		//$this->loader->add_action('the_content', 'inject_custom_content_block', 20);
+	// 	$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
+	// 	$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+	// 	//$this->loader->add_action('the_content', $plugin_public, 'inject_custom_content_block');
+	// 	//$this->loader->add_action('the_content', 'inject_custom_content_block', 20);
 		
-	}
+	// }
 
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
@@ -199,37 +199,6 @@ class Tac_Text_Image {
 		$this->acf = new Tac_Text_Image_ACF();
 		$this->public = new Tac_Text_Image_PUBLIC();
 	}
-
-
-	public function inject_custom_content_block($content) {
-		global $post;
-
-		echo plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/tac-text-image-public-display.php';
-		echo get_row_layout();
-		
-		// Check if the current post has the specific ACF layout/block you're targeting
-		if (have_rows('content_blocks', $post->ID)): 
-
-			while (have_rows('content_blocks', $post->ID)): the_row();
-
-			
-
-				if (get_row_layout() == 'flexiimagetext'):
-					ob_start();
-					include plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/tac-text-image-public-display.php';
-					$block_content = ob_get_clean();
-
-					// Append or insert the block content where you want it relative to the post content
-					$content .= $block_content;
-				endif;
-
-			endwhile;
-		endif;
-
-		return $content;
-	}
-
-
 
 
 	/**
