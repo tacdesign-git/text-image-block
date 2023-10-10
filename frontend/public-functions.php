@@ -5,7 +5,7 @@
 function inject_custom_content_block($content) {
     global $post;
 
-    echo 'im here...';
+    echo $post->ID;
     
     
     // Check if the current post has the specific ACF layout/block you're targeting
@@ -31,7 +31,7 @@ function inject_custom_content_block($content) {
 }
 
 
-add_filter('the_content', 'inject_custom_content_block', 20);
+add_filter('the_content', 'inject_custom_content_block', 20, 2);
 ?>
 
 
