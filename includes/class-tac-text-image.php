@@ -128,6 +128,12 @@ class Tac_Text_Image {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-tac-text-image-public.php';
 
 
+		/**
+		 * The class responsible for injecting the ACF fields
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-tac-text-image-public.php';
+
+
 		$this->loader = new Tac_Text_Image_Loader();
 
 	}
@@ -191,7 +197,7 @@ class Tac_Text_Image {
 	public function run() {
 		$this->loader->run();
 		$this->acf = new Tac_Text_Image_ACF();
-		add_filter('the_content', array($this, 'inject_custom_content_block'), 20);
+		$this->public = new Tac_Text_Image_PUBLIC();
 	}
 
 
