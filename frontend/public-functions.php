@@ -29,4 +29,4 @@ function render_my_custom_block() {
     <?php
 }
 
-?>
+
