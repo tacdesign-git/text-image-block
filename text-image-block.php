@@ -4,13 +4,13 @@
  * @wordpress-plugin
  * Plugin Name:       TAC - Text / Image
  * Description:       TAC Design - Text & Image block
- * Version:           1.0.19
+ * Version:           1.0.20
  * Author:            TAC Design
 */
 
 // Activation Hook
-register_activation_hook(__FILE__, 'text-image-block_activate');
-function your_plugin_name_activate() {
+register_activation_hook(__FILE__, 'text_image_activate');
+function text_image_activate() {
     require_once plugin_dir_path(__FILE__) . 'includes/activate.php';
 }
 

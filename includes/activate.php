@@ -7,7 +7,7 @@ if ( version_compare($wp_version, '5.0', '<') ) {
     wp_die('This plugin requires WordPress version 5.0 or higher.');
 }
 
-function my_block_plugin_activate() {
+function block_plugin_activate() {
     $registered_blocks = get_option('dynamic_blocks_registry', []);
     
     $registered_blocks['flexiimagetext'] = [
@@ -16,7 +16,7 @@ function my_block_plugin_activate() {
 
     update_option('dynamic_blocks_registry', $registered_blocks);
 }
-register_activation_hook(__FILE__, 'text-image-block_activate');
+register_activation_hook(__FILE__, 'block_plugin_activat');
 
 
 
