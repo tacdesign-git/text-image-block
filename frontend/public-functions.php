@@ -19,9 +19,10 @@ add_action('wp_enqueue_scripts', 'enqueue_my_custom_block_assets');
 
 // Render the block's content
 function render_my_custom_block() {
-    
+    ob_start();
     echo 'this a test';
-
+    ob_end_flush();
 }
+
 
 
