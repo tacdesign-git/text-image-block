@@ -19,4 +19,3 @@ function my_block_plugin_activate() {
 register_activation_hook(__FILE__, 'my_block_plugin_activate');
 
 
-?>

@@ -871,4 +871,3 @@ function modify_acf_layouts($acf_field_group) {
 add_filter('modify_acf_field_groups', 'modify_acf_layouts', 20, 1);
 
 
-?>
