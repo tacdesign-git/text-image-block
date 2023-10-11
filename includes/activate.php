@@ -10,7 +10,7 @@ function block_plugin_activate() {
     $registered_blocks = get_option('dynamic_blocks_registry', []);
 
     // add block name & path
-    $registered_blocks['text_image_block'] = [
+    $registered_blocks['textimageblock'] = [
         'template_path' => WP_PLUGIN_DIR . "/text-image-block/text-image-block.php",
     ];
 
