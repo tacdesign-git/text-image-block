@@ -4,7 +4,7 @@
  * @wordpress-plugin
  * Plugin Name:       TAC - Text / Image
  * Description:       TAC Design - Text & Image block
- * Version:           1.0.13
+ * Version:           1.0.14
  * Author:            TAC Design
 */
 
@@ -37,3 +37,4 @@ if (!is_admin()) {
 }
 
 
+?>
