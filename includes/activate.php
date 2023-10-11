@@ -9,8 +9,7 @@ if (version_compare($wp_version, '5.0', '<')) {
 function block_plugin_activate() {
     $registered_blocks = get_option('dynamic_blocks_registry', []);
 
-    // add block name & path
-    $registered_blocks['textimageblock'] = [
+    $registered_blocks['flexiimagetext'] = [
         'template_path' => WP_PLUGIN_DIR . "/text-image-block/text-image-block.php",
     ];
 
