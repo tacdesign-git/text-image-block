@@ -10,13 +10,13 @@ if ( version_compare($wp_version, '5.0', '<') ) {
 function my_block_plugin_activate() {
     $registered_blocks = get_option('dynamic_blocks_registry', []);
     
-    $registered_blocks['my_block_name'] = [
+    $registered_blocks['flexiimagetext'] = [
         'template_path' => WP_PLUGIN_DIR . "/text-image-block/text-image-block.php",
     ];
 
     update_option('dynamic_blocks_registry', $registered_blocks);
 }
-register_activation_hook(__FILE__, 'my_block_plugin_activate');
+register_activation_hook(__FILE__, 'text-image-block_activate');
 
 
-?>
+
