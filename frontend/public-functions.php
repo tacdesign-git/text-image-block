@@ -19,16 +19,9 @@ add_action('wp_enqueue_scripts', 'enqueue_my_custom_block_assets');
 
 // Render the block's content
 function render_my_custom_block() {
-    // Access any necessary ACF fields or other data
-    //$some_field = 'hello block';
+    
+    echo 'this a test';
 
-    // Output your block's HTML and any dynamic content
-    ?>
-    <div class="my-custom-block">
-        <h2>Hellloooooooo...</h2>
-        <!-- More HTML and dynamic content here -->
-    </div>
-    <?php
 }
 
 
