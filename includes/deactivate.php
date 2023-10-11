@@ -1,14 +1,14 @@
 <?php
 function block_plugin_deactivate() {
 
-    $registered_blocks = get_option('dynamic_blocks_registry', []);
+    $deregister_blocks = get_option('dynamic_blocks_registry', []);
 
     // add block name
-    if (isset($registered_blocks['textimageblock'])) {
-        unset($registered_blocks['textimageblock']);
+    if (isset($deregister_blocks['textimageblock'])) {
+        unset($deregister_blocks['textimageblock']);
     }
 
-    update_option('dynamic_blocks_registry', $registered_blocks);
+    update_option('dynamic_blocks_registry', $deregister_blocks);
 }
 
 
