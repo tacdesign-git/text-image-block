@@ -9,7 +9,7 @@
 */
 
 // Activation Hook
-register_activation_hook(__FILE__, 'your_plugin_name_activate');
+register_activation_hook(__FILE__, 'text-image-block_activate');
 function your_plugin_name_activate() {
     require_once plugin_dir_path(__FILE__) . 'includes/activate.php';
 }
