@@ -16,7 +16,7 @@ function block_plugin_activate() {
 
     update_option('dynamic_blocks_registry', $registered_blocks);
 }
-register_activation_hook(__FILE__, 'block_plugin_activat');
+register_activation_hook(__FILE__, 'block_plugin_activate');
 
 
 
