@@ -1,35 +1,32 @@
 <?php
 
-echo 'Im stuck';
-
-function inject_custom_content_block($content) {
-    global $post;
-
-    echo plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/tac-text-image-public-display.php';
-    
-    // Check if the current post has the specific ACF layout/block you're targeting
-    if (have_rows('content_blocks', $post->ID)): 
-
-        while (have_rows('content_blocks', $post->ID)): the_row();
-
-        
-
-            if (get_row_layout() == 'flexiimagetext'):
-                ob_start();
-                echo 'Im in dog...';
-                $block_content = ob_get_clean();
-
-                // Append or insert the block content where you want it relative to the post content
-                $content .= $block_content;
-            endif;
-
+// Enqueue any necessary styles or scripts specific to this block
+function enqueue_my_custom_block_assets() {
+    if (is_singular() && have_rows('content_blocks')) {
+        // Check if our block exists on the page before enqueuing
+        while (have_rows('content_blocks')) : the_row();
+            if (get_row_layout() == 'my_custom_block') {
+                wp_enqueue_style('tac-block-style', plugin_dir_url(__FILE__) . '/frontend/public.css');
+                wp_enqueue_script('tac-block-script', plugin_dir_url(__FILE__) . '/frontend/public.js', array('jquery'), '', true);
+                break; // Exit the loop once our block is found
+            }
         endwhile;
-    endif;
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_my_custom_block_assets');
 
-    return $content;
+// Render the block's content
+function render_my_custom_block() {
+    // Access any necessary ACF fields or other data
+    $some_field = 'hello block';
+
+    // Output your block's HTML and any dynamic content
+    ?>
+    <div class="my-custom-block">
+        <h2><?php echo esc_html($some_field); ?></h2>
+        <!-- More HTML and dynamic content here -->
+    </div>
+    <?php
 }
 
-
-add_filter('the_content', 'inject_custom_content_block', 20);
-
-
+?>

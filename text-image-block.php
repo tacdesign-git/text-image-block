@@ -4,15 +4,15 @@
  * @wordpress-plugin
  * Plugin Name:       TAC - Text / Image
  * Description:       TAC Design - Text & Image block
- * Version:           1.0.11
+ * Version:           1.0.12
  * Author:            TAC Design
 */
 
 // Activation Hook
-// register_activation_hook(__FILE__, 'your_plugin_name_activate');
-// function your_plugin_name_activate() {
-//     require_once plugin_dir_path(__FILE__) . 'includes/activate.php';
-// }
+register_activation_hook(__FILE__, 'your_plugin_name_activate');
+function your_plugin_name_activate() {
+    require_once plugin_dir_path(__FILE__) . 'includes/activate.php';
+}
 
 // // Deactivation Hook
 // register_deactivation_hook(__FILE__, 'your_plugin_name_deactivate');
@@ -33,7 +33,8 @@ if (is_admin()) {
 
 // Load Frontend Functions
 if (!is_admin()) {
-    require_once plugin_dir_path(__FILE__) . 'frontend/public-functions.php';
+    require_once plugin_dir_path(__FILE__) . 'frontend/block.php';
 }
 
 
+?>
