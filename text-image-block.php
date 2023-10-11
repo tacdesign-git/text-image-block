@@ -4,7 +4,7 @@
  * @wordpress-plugin
  * Plugin Name:       TAC - Text / Image
  * Description:       TAC Design - Text & Image block
- * Version:           1.0.20
+ * Version:           1.0.21
  * Author:            TAC Design
 */
 
@@ -29,6 +29,7 @@ function your_plugin_name_uninstall() {
 // Load Admin Functions
 if (is_admin()) {
     require_once plugin_dir_path(__FILE__) . 'admin/admin-acf.php';
+	require_once plugin_dir_path(__FILE__) . 'includes/activate.php';
 }
 
 // Load Frontend Functions
