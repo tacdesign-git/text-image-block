@@ -9,6 +9,9 @@ function enqueue_my_custom_block_assets() {
             if (get_row_layout() == 'flexiimagetext') {
                 wp_enqueue_style('tac-block-style', plugin_dir_url(__FILE__) . 'public.css');
                 wp_enqueue_script('tac-block-script', plugin_dir_url(__FILE__) . 'public.js', array('jquery'), '', true);
+
+                render_my_custom_block();
+                
                 break; // Exit the loop once our block is found
             }
         endwhile;
