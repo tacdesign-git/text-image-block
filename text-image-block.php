@@ -39,4 +39,3 @@ if (!is_admin()) {
     require_once plugin_dir_path(__FILE__) . 'frontend/block.php';
 }
 
-

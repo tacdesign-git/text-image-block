@@ -3,7 +3,7 @@
 // Enqueue any necessary styles or scripts specific to this block
 function enqueue_my_custom_block_assets() {
 
-    if (is_singular() && have_rows('content_blocks')) {
+    if (have_rows('content_blocks')) {
         // Check if our block exists on the page before enqueuing
         while (have_rows('content_blocks')) : the_row();
             if (get_row_layout() == 'flexiimagetext') {
